@@ -1,0 +1,42 @@
+# --- credentials (never commit) ---
+kaggle.json
+.kaggle/
+*.env
+.env
+secrets*
+
+# --- environments ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- python caches ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- raw data is redistributed under its Kaggle licence; keep it out of Git
+#     and use scripts/download_data.py instead ---
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+
+# processed artifacts are regenerable
+data/processed/*
+!data/processed/.gitkeep
+
+# --- development-run outputs: never the reported figures ---
+results/**/*_dev*
+
+# large model binaries: keep the .joblib files, ignore scratch
+models/*.tmp

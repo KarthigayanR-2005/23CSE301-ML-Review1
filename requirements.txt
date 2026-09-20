@@ -1,0 +1,32 @@
+# 23CSE301 ML Capstone (REVIEW 1) - pinned to the versions actually used and tested
+# Verified on Python 3.12.3 / Linux, September 2026.
+#
+#   pip install -r requirements.txt
+#
+# If a pin is unavailable for your Python version, relax it to >= and re-run
+# `python -m pytest tests/` plus `python scripts/validate_project.py` to confirm
+# results still reproduce. Do NOT report figures from an unverified environment.
+
+# --- core (PDF section: primary tools) ---
+numpy==2.4.4
+pandas==3.0.2
+scikit-learn==1.8.0
+scipy==1.17.1
+matplotlib==3.10.8
+seaborn==0.13.2
+joblib==1.5.3
+
+# --- notebooks: authoring and top-to-bottom execution ---
+notebook==7.4.7
+ipykernel==7.3.0
+nbformat==5.11.1
+nbclient==0.11.0
+
+# --- bonus GUI ---
+streamlit==1.64.0
+
+# --- tests ---
+pytest==9.1.1
+
+# --- optional: only needed if you use scripts/download_data.py's Kaggle path ---
+# kaggle==1.6.17
