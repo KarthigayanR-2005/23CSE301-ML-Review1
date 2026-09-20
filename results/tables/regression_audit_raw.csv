@@ -1,0 +1,7 @@
+column,dtype,missing,missing_pct,n_unique,example
+Hours Studied,int64,0,0.0,9,7
+Previous Scores,int64,0,0.0,60,99
+Extracurricular Activities,str,0,0.0,2,Yes
+Sleep Hours,int64,0,0.0,6,9
+Sample Question Papers Practiced,int64,0,0.0,10,1
+Performance Index,float64,0,0.0,91,91.0

@@ -1,0 +1,12 @@
+{
+  "regression": {
+    "track": "regression",
+    "filename": "Student_Performance.csv",
+    "source_url": "https://www.kaggle.com/datasets/nikhil7280/student-performance-multiple-linear-regression",
+    "retrieved_on": "2026-09-21",
+    "sha256": "93793b00d9026d0b4907df0ca9f88b3696747c7496679d35833bb0fbf9fb57cf",
+    "size_bytes": 175071,
+    "raw_rows": 10000,
+    "raw_cols": 6
+  }
+}
