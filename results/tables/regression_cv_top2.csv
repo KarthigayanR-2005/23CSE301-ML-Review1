@@ -1,0 +1,3 @@
+,Model,scoring,folds,CV_mean,CV_std
+0,1. Linear Regression,r2,5,0.9886614186306701,0.0002834962772064987
+1,2. Ridge Regression,r2,5,0.9886613978217239,0.0002822969886421774

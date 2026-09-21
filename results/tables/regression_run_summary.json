@@ -1,0 +1,193 @@
+{
+  "track": "regression",
+  "mode": "full",
+  "raw_shape": [
+    10000,
+    6
+  ],
+  "n_duplicate_rows": 127,
+  "missing_cells": 0,
+  "prepared_shape": [
+    10000,
+    6
+  ],
+  "rows_if_deduplicated": 9873,
+  "deduplication_conflicts_with_size_preference": true,
+  "split": {
+    "train": [
+      8000,
+      5
+    ],
+    "test": [
+      2000,
+      5
+    ],
+    "test_size": 0.2,
+    "stratified": false,
+    "note": "see docs/instructor_clarifications.md IC-2"
+  },
+  "row_overlap": {
+    "test_rows": 2000,
+    "test_rows_also_in_train": 258,
+    "pct": 12.9
+  },
+  "feature_engineering": {
+    "track": "regression",
+    "state": "AWAITING TEAM INPUT",
+    "rubric_B3": "INCOMPLETE",
+    "detail": "No engineered feature registered; baseline pipeline executed."
+  },
+  "comparison_table": [
+    {
+      "Model": "5. Polynomial (deg 2) + Linear",
+      "R2": 0.9889886481405485,
+      "RMSE": 2.020060173893751,
+      "MAE": 1.6115229438315084,
+      "Train_R2": 0.9887046501591211,
+      "Fit_seconds": 0.028
+    },
+    {
+      "Model": "1. Linear Regression",
+      "R2": 0.9889832909573145,
+      "RMSE": 2.0205515085050028,
+      "MAE": 1.6111213463123026,
+      "Train_R2": 0.9886898790682355,
+      "Fit_seconds": 0.031
+    },
+    {
+      "Model": "2. Ridge Regression",
+      "R2": 0.9889817103276002,
+      "RMSE": 2.020696453297199,
+      "MAE": 1.61122225609473,
+      "Train_R2": 0.9886898633604801,
+      "Fit_seconds": 0.021
+    },
+    {
+      "Model": "3. Lasso Regression",
+      "R2": 0.9889693545249262,
+      "RMSE": 2.0218291304991904,
+      "MAE": 1.6117182208520844,
+      "Train_R2": 0.9886877035200944,
+      "Fit_seconds": 0.016
+    },
+    {
+      "Model": "4. ElasticNet Regression",
+      "R2": 0.9888860413275621,
+      "RMSE": 2.029450089025257,
+      "MAE": 1.617387131255477,
+      "Train_R2": 0.9886606251754774,
+      "Fit_seconds": 0.018
+    },
+    {
+      "Model": "8. Gradient Boosting Regressor",
+      "R2": 0.9884112951689122,
+      "RMSE": 2.0723420383996536,
+      "MAE": 1.6431967544579686,
+      "Train_R2": 0.9891037210560236,
+      "Fit_seconds": 1.018
+    },
+    {
+      "Model": "7. Random Forest Regressor",
+      "R2": 0.9861751036813338,
+      "RMSE": 2.263470964236322,
+      "MAE": 1.80971462512025,
+      "Train_R2": 0.9974980411971224,
+      "Fit_seconds": 0.66
+    },
+    {
+      "Model": "9. Support Vector Regressor",
+      "R2": 0.9859243822338378,
+      "RMSE": 2.2839033347856152,
+      "MAE": 1.7927646848433236,
+      "Train_R2": 0.9861708396615138,
+      "Fit_seconds": 2.396
+    },
+    {
+      "Model": "6. Decision Tree Regressor",
+      "R2": 0.9839007259865192,
+      "RMSE": 2.442570639265433,
+      "MAE": 1.9514003544952363,
+      "Train_R2": 0.9859667993145701,
+      "Fit_seconds": 0.028
+    },
+    {
+      "Model": "10. K-Nearest Neighbors Regressor",
+      "R2": 0.9768984245983586,
+      "RMSE": 2.9259357477566046,
+      "MAE": 2.3603,
+      "Train_R2": 0.984024635611489,
+      "Fit_seconds": 0.028
+    }
+  ],
+  "cv_selected_leaders": [
+    "1. Linear Regression",
+    "2. Ridge Regression"
+  ],
+  "tuning": [
+    {
+      "Model": "2. Ridge Regression",
+      "best_params": "{\"model__alpha\": 0.1}",
+      "CV_R2_before": 0.98866,
+      "CV_R2_after": 0.98866,
+      "CV_delta": 0.0,
+      "HeldOut_R2_before": 0.98898,
+      "HeldOut_R2_after": 0.98898,
+      "HeldOut_delta": 0.0,
+      "HeldOut_RMSE_after": 2.02057,
+      "improved_on_CV": true
+    },
+    {
+      "Model": "3. Lasso Regression",
+      "best_params": "{\"model__alpha\": 0.001}",
+      "CV_R2_before": 0.98866,
+      "CV_R2_after": 0.98866,
+      "CV_delta": 0.0,
+      "HeldOut_R2_before": 0.98897,
+      "HeldOut_R2_after": 0.98898,
+      "HeldOut_delta": 1e-05,
+      "HeldOut_RMSE_after": 2.02066,
+      "improved_on_CV": true
+    }
+  ],
+  "linear_intercept": 55.010462974864524,
+  "lasso_sparsity": {
+    "n_features": 5,
+    "n_zero_coefficients": 0,
+    "zeroed_features": [],
+    "pct_zero": 0.0
+  },
+  "polynomial_degrees": [
+    {
+      "degree": 1,
+      "n_expanded_terms": 5,
+      "train_R2": 0.9886898790682355,
+      "test_R2": 0.9889832909573145,
+      "test_RMSE": 2.020551508505003,
+      "test_MAE": 1.6111213463123026
+    },
+    {
+      "degree": 2,
+      "n_expanded_terms": 20,
+      "train_R2": 0.9887046501591211,
+      "test_R2": 0.9889886481405485,
+      "test_RMSE": 2.020060173893751,
+      "test_MAE": 1.6115229438315084
+    },
+    {
+      "degree": 3,
+      "n_expanded_terms": 55,
+      "train_R2": 0.9887558743759424,
+      "test_R2": 0.9889575942235431,
+      "test_RMSE": 2.0229066279953116,
+      "test_MAE": 1.6119315629988236
+    }
+  ],
+  "best_model_heldout": "5. Polynomial (deg 2) + Linear",
+  "tree_importances": {
+    "Previous Scores": 0.84678,
+    "Hours Studied": 0.1419,
+    "Sample Question Papers Practiced": 0.00518,
+    "Sleep Hours": 0.00481,
+    "Extracurricular Activities_Yes": 0.00134
+  }
+}
