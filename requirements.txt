@@ -30,3 +30,6 @@ pytest==9.1.1
 
 # --- optional: only needed if you use scripts/download_data.py's Kaggle path ---
 # kaggle==1.6.17
+
+# --- required by pandas .to_markdown(), used in evaluation.save_table ---
+tabulate==0.10.0
