@@ -264,13 +264,35 @@ makes the comparison tables fair.
 
 ---
 
-## 7. GUI status
+## 10. GUI status
 
 | Item | Status |
 |---|---|
 | Interactive GUI accepting inputs, returning predictions | ✅ **Built** — `app/streamlit_app.py`, loads saved pipelines, runs locally |
 | Public deployment | ❌ **Not done, not claimed.** No public URL exists. |
 
-The app serves the **Review 1** models: the best regressor (Polynomial deg-2)
-and the best **Part A** classifier (Decision Tree). It deliberately does not
-load any Part B model.
+**Model picker.** Every model from both comparison tables is saved to `models/`
+and selectable from a dropdown, in the same rank order the report uses —
+regression by test R², classification by weighted F1. The pipelines loaded are
+the **baseline** fits, so each model's dropdown score is exactly the one it
+earned in `results/tables/*_comparison.csv`; tuned variants are reported
+separately in `*_tuning.csv`. Each tab also has a "compare every model on these
+same inputs" panel.
+
+That panel is where the class-imbalance problem becomes visible. On a worn,
+high-torque machine (torque 60, speed 1300, wear 200, Type L):
+
+| Rank | Model | Verdict | P(failure) | Recall (fail) |
+|---:|---|---|---:|---:|
+| 1 | Decision Tree | **FAILURE** | 100.0 % | 0.382 |
+| 2 | K-Nearest Neighbors | **FAILURE** | 60.0 % | 0.294 |
+| 3 | Support Vector Classifier | **FAILURE** | 98.1 % | 0.206 |
+| 4 | Logistic Regression | no failure | 32.9 % | 0.103 |
+| 5 | Gaussian Naive Bayes | no failure | 37.8 % | 0.118 |
+
+Identical inputs, opposite verdicts. Logistic Regression and Gaussian NB both
+say "no failure" while still reporting a probability roughly **ten times the
+3.39 % base rate** — which is the whole argument for reading probabilities
+rather than labels on an imbalanced problem.
+
+The app serves **Review 1** models only and deliberately loads no Part B model.
