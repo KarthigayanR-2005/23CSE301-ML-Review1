@@ -1,0 +1,11 @@
+column,dtype,missing,missing_pct,n_unique,example
+UDI,int64,0,0.0,10000,1
+Product ID,str,0,0.0,10000,M14860
+Type,str,0,0.0,3,M
+Air temperature [K],float64,0,0.0,93,298.1
+Process temperature [K],float64,0,0.0,82,308.6
+Rotational speed [rpm],int64,0,0.0,941,1551
+Torque [Nm],float64,0,0.0,577,42.8
+Tool wear [min],int64,0,0.0,246,0
+Target,int64,0,0.0,2,0
+Failure Type,str,0,0.0,6,No Failure

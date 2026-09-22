@@ -1,0 +1,6 @@
+,Model,scoring,folds,CV_mean,CV_std
+0,A1. Logistic Regression,f1_weighted,5,0.9617652848779364,0.003476131927546288
+1,A2. K-Nearest Neighbors,f1_weighted,5,0.9678626875743058,0.0024294288700781102
+2,A3. Gaussian Naive Bayes,f1_weighted,5,0.9553021256387388,0.0033721541555272374
+3,A4. Decision Tree Classifier,f1_weighted,5,0.9748009938884824,0.0017367824078934602
+4,A5. Support Vector Classifier,f1_weighted,5,0.9667665795683783,0.0017674252291151101

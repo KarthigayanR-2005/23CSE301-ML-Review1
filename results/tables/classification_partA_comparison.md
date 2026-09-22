@@ -1,0 +1,7 @@
+|   Rank | Model                         |   Accuracy |   Precision_failure |   Recall_failure |   F1_weighted |   F1_failure |   ROC_AUC | AUC_source    |   Fit_seconds |
+|-------:|:------------------------------|-----------:|--------------------:|-----------------:|--------------:|-------------:|----------:|:--------------|--------------:|
+|      1 | A4. Decision Tree Classifier  |     0.9755 |            0.787879 |         0.382353 |      0.971365 |     0.514851 |  0.921854 | predict_proba |         0.032 |
+|      2 | A2. K-Nearest Neighbors       |     0.974  |            0.833333 |         0.294118 |      0.967929 |     0.434783 |  0.829086 | predict_proba |         0.025 |
+|      3 | A5. Support Vector Classifier |     0.972  |            0.875    |         0.205882 |      0.963519 |     0.333333 |  0.946817 | predict_proba |         0.901 |
+|      4 | A1. Logistic Regression       |     0.9675 |            0.636364 |         0.102941 |      0.956012 |     0.177215 |  0.899388 | predict_proba |         0.039 |
+|      5 | A3. Gaussian Naive Bayes      |     0.958  |            0.25     |         0.117647 |      0.950634 |     0.16     |  0.846814 | predict_proba |         0.015 |

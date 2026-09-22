@@ -1,0 +1,179 @@
+{
+  "track": "classification",
+  "mode": "full",
+  "part": "A (Review 1)",
+  "raw_shape": [
+    10000,
+    10
+  ],
+  "target_distribution_raw": {
+    "0": 9661,
+    "1": 339
+  },
+  "leakage_columns_excluded": [
+    "Failure Type"
+  ],
+  "prepared_shape": [
+    10000,
+    7
+  ],
+  "split": {
+    "train": [
+      8000,
+      6
+    ],
+    "test": [
+      2000,
+      6
+    ],
+    "stratified": true
+  },
+  "row_overlap": {
+    "test_rows": 2000,
+    "test_rows_also_in_train": 0,
+    "pct": 0.0
+  },
+  "feature_engineering": {
+    "track": "classification",
+    "state": "AWAITING TEAM INPUT",
+    "rubric_B3": "INCOMPLETE",
+    "detail": "No engineered feature registered; baseline pipeline executed."
+  },
+  "majority_baseline": {
+    "majority_class": 0,
+    "baseline_accuracy": 0.966,
+    "baseline_f1_weighted": 0.949293997965412,
+    "test_class_counts": {
+      "0": 1932,
+      "1": 68
+    }
+  },
+  "partA_table": [
+    {
+      "Model": "A4. Decision Tree Classifier",
+      "Accuracy": 0.9755,
+      "Precision_failure": 0.7878787878787878,
+      "Recall_failure": 0.38235294117647056,
+      "F1_weighted": 0.9713649145884067,
+      "F1_failure": 0.5148514851485149,
+      "ROC_AUC": 0.9218540677140421,
+      "AUC_source": "predict_proba",
+      "Fit_seconds": 0.032
+    },
+    {
+      "Model": "A2. K-Nearest Neighbors",
+      "Accuracy": 0.974,
+      "Precision_failure": 0.8333333333333334,
+      "Recall_failure": 0.29411764705882354,
+      "F1_weighted": 0.9679289751234925,
+      "F1_failure": 0.43478260869565216,
+      "ROC_AUC": 0.8290859822189744,
+      "AUC_source": "predict_proba",
+      "Fit_seconds": 0.025
+    },
+    {
+      "Model": "A5. Support Vector Classifier",
+      "Accuracy": 0.972,
+      "Precision_failure": 0.875,
+      "Recall_failure": 0.20588235294117646,
+      "F1_weighted": 0.9635192373169902,
+      "F1_failure": 0.3333333333333333,
+      "ROC_AUC": 0.9468167701863354,
+      "AUC_source": "predict_proba",
+      "Fit_seconds": 0.901
+    },
+    {
+      "Model": "A1. Logistic Regression",
+      "Accuracy": 0.9675,
+      "Precision_failure": 0.6363636363636364,
+      "Recall_failure": 0.10294117647058823,
+      "F1_weighted": 0.9560115444587566,
+      "F1_failure": 0.17721518987341772,
+      "ROC_AUC": 0.8993880160759956,
+      "AUC_source": "predict_proba",
+      "Fit_seconds": 0.039
+    },
+    {
+      "Model": "A3. Gaussian Naive Bayes",
+      "Accuracy": 0.958,
+      "Precision_failure": 0.25,
+      "Recall_failure": 0.11764705882352941,
+      "F1_weighted": 0.9506338461538462,
+      "F1_failure": 0.16,
+      "ROC_AUC": 0.8468137254901961,
+      "AUC_source": "predict_proba",
+      "Fit_seconds": 0.015
+    }
+  ],
+  "cv_selected_leaders": [
+    "A4. Decision Tree Classifier",
+    "A2. K-Nearest Neighbors"
+  ],
+  "tuning": [
+    {
+      "Model": "A4. Decision Tree Classifier",
+      "best_params": "{\"model__class_weight\": null, \"model__max_depth\": null, \"model__min_samples_leaf\": 5}",
+      "CV_F1w_before": 0.9748,
+      "CV_F1w_after": 0.98168,
+      "CV_delta": 0.00688,
+      "HeldOut_F1w_before": 0.97136,
+      "HeldOut_F1w_after": 0.98421,
+      "HeldOut_Recall_failure_before": 0.38235,
+      "HeldOut_Recall_failure_after": 0.73529,
+      "HeldOut_ROC_AUC_before": 0.92185,
+      "HeldOut_ROC_AUC_after": 0.88472,
+      "improved_on_CV": true
+    },
+    {
+      "Model": "A2. K-Nearest Neighbors",
+      "best_params": "{\"model__n_neighbors\": 3, \"model__weights\": \"uniform\"}",
+      "CV_F1w_before": 0.96786,
+      "CV_F1w_after": 0.96912,
+      "CV_delta": 0.00126,
+      "HeldOut_F1w_before": 0.96793,
+      "HeldOut_F1w_after": 0.96631,
+      "HeldOut_Recall_failure_before": 0.29412,
+      "HeldOut_Recall_failure_after": 0.30882,
+      "HeldOut_ROC_AUC_before": 0.82909,
+      "HeldOut_ROC_AUC_after": 0.78646,
+      "improved_on_CV": true
+    }
+  ],
+  "tree_importances": {
+    "Torque [Nm]": 0.51505,
+    "Air temperature [K]": 0.14657,
+    "Tool wear [min]": 0.12306,
+    "Rotational speed [rpm]": 0.11065,
+    "Process temperature [K]": 0.0997,
+    "Type_M": 0.00498,
+    "Type_H": 0.0,
+    "Type_L": 0.0
+  },
+  "knn_distance_metrics": [
+    {
+      "distance_metric": "euclidean",
+      "Accuracy": 0.974,
+      "Precision_failure": 0.8333333333333334,
+      "Recall_failure": 0.29411764705882354,
+      "F1_weighted": 0.9679289751234925,
+      "ROC_AUC": 0.8290859822189744
+    },
+    {
+      "distance_metric": "manhattan",
+      "Accuracy": 0.9735,
+      "Precision_failure": 0.8260869565217391,
+      "Recall_failure": 0.27941176470588236,
+      "F1_weighted": 0.9671003348148397,
+      "ROC_AUC": 0.8297558153696262
+    },
+    {
+      "distance_metric": "chebyshev",
+      "Accuracy": 0.9715,
+      "Precision_failure": 0.7894736842105263,
+      "Recall_failure": 0.22058823529411764,
+      "F1_weighted": 0.9636525815804085,
+      "ROC_AUC": 0.8044353611009621
+    }
+  ],
+  "best_model_heldout": "A4. Decision Tree Classifier"
+}

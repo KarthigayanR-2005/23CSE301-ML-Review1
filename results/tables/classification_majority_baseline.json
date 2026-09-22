@@ -1,0 +1,9 @@
+{
+  "majority_class": 0,
+  "baseline_accuracy": 0.966,
+  "baseline_f1_weighted": 0.949293997965412,
+  "test_class_counts": {
+    "0": 1932,
+    "1": 68
+  }
+}

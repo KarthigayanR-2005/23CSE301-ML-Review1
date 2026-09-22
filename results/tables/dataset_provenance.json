@@ -8,5 +8,15 @@
     "size_bytes": 175071,
     "raw_rows": 10000,
     "raw_cols": 6
+  },
+  "classification": {
+    "track": "classification",
+    "filename": "predictive_maintenance.csv",
+    "source_url": "https://www.kaggle.com/datasets/shivamb/machine-predictive-maintenance-classification",
+    "retrieved_on": "2026-09-22",
+    "sha256": "9f0ede0b6fc33edacccfa1924e6430f92bd33ecce6e895543cd228c3a55ff10b",
+    "size_bytes": 531014,
+    "raw_rows": 10000,
+    "raw_cols": 10
   }
 }
