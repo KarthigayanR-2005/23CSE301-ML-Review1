@@ -1,0 +1,112 @@
+[
+  {
+    "rank": 1,
+    "model": "5. Polynomial (deg 2) + Linear",
+    "file": "regression/05_polynomial_deg_2_linear.joblib",
+    "also_tuned": false,
+    "rank_metric": "R2",
+    "rank_value": 0.9889886481405485,
+    "RMSE": 2.020060173893752,
+    "MAE": 1.611522943831509,
+    "Train_R2": 0.9887046501591211
+  },
+  {
+    "rank": 2,
+    "model": "1. Linear Regression",
+    "file": "regression/01_linear_regression.joblib",
+    "also_tuned": false,
+    "rank_metric": "R2",
+    "rank_value": 0.9889832909573145,
+    "RMSE": 2.020551508505006,
+    "MAE": 1.6111213463123044,
+    "Train_R2": 0.9886898790682355
+  },
+  {
+    "rank": 3,
+    "model": "2. Ridge Regression",
+    "file": "regression/02_ridge_regression.joblib",
+    "also_tuned": true,
+    "rank_metric": "R2",
+    "rank_value": 0.9889817103276002,
+    "RMSE": 2.020696453297198,
+    "MAE": 1.6112222560947294,
+    "Train_R2": 0.9886898633604801
+  },
+  {
+    "rank": 4,
+    "model": "3. Lasso Regression",
+    "file": "regression/03_lasso_regression.joblib",
+    "also_tuned": true,
+    "rank_metric": "R2",
+    "rank_value": 0.9889693545249262,
+    "RMSE": 2.0218291304991904,
+    "MAE": 1.6117182208520844,
+    "Train_R2": 0.9886877035200944
+  },
+  {
+    "rank": 5,
+    "model": "4. ElasticNet Regression",
+    "file": "regression/04_elasticnet_regression.joblib",
+    "also_tuned": false,
+    "rank_metric": "R2",
+    "rank_value": 0.9888860413275621,
+    "RMSE": 2.029450089025257,
+    "MAE": 1.6173871312554768,
+    "Train_R2": 0.9886606251754774
+  },
+  {
+    "rank": 6,
+    "model": "8. Gradient Boosting Regressor",
+    "file": "regression/08_gradient_boosting_regressor.joblib",
+    "also_tuned": false,
+    "rank_metric": "R2",
+    "rank_value": 0.9884112951689122,
+    "RMSE": 2.0723420383996536,
+    "MAE": 1.6431967544579686,
+    "Train_R2": 0.9891037210560236
+  },
+  {
+    "rank": 7,
+    "model": "7. Random Forest Regressor",
+    "file": "regression/07_random_forest_regressor.joblib",
+    "also_tuned": false,
+    "rank_metric": "R2",
+    "rank_value": 0.9861751036813338,
+    "RMSE": 2.263470964236322,
+    "MAE": 1.80971462512025,
+    "Train_R2": 0.9974980411971224
+  },
+  {
+    "rank": 8,
+    "model": "9. Support Vector Regressor",
+    "file": "regression/09_support_vector_regressor.joblib",
+    "also_tuned": false,
+    "rank_metric": "R2",
+    "rank_value": 0.9859243822338378,
+    "RMSE": 2.283903334785615,
+    "MAE": 1.7927646848433234,
+    "Train_R2": 0.9861708396615138
+  },
+  {
+    "rank": 9,
+    "model": "6. Decision Tree Regressor",
+    "file": "regression/06_decision_tree_regressor.joblib",
+    "also_tuned": false,
+    "rank_metric": "R2",
+    "rank_value": 0.9839007259865192,
+    "RMSE": 2.442570639265433,
+    "MAE": 1.9514003544952363,
+    "Train_R2": 0.9859667993145701
+  },
+  {
+    "rank": 10,
+    "model": "10. K-Nearest Neighbors Regressor",
+    "file": "regression/10_k_nearest_neighbors_regressor.joblib",
+    "also_tuned": false,
+    "rank_metric": "R2",
+    "rank_value": 0.9768410018928013,
+    "RMSE": 2.929569934307765,
+    "MAE": 2.3615,
+    "Train_R2": 0.9840267784320078
+  }
+]

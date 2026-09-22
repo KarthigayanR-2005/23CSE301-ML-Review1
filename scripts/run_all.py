@@ -57,6 +57,60 @@ def banner(text: str) -> None:
     print("\n" + "=" * 78 + f"\n{text}\n" + "=" * 78)
 
 
+def slugify(name: str) -> str:
+    """'7. Random Forest Regressor' -> '07_random_forest_regressor'"""
+    import re
+    n, _, rest = name.partition(".")
+    num = f"{int(n):02d}" if n.strip().isdigit() else re.sub(r"\W+", "", n)[:3]
+    body = re.sub(r"[^a-z0-9]+", "_", rest.strip().lower()).strip("_")
+    return f"{num}_{body}"
+
+
+def save_all_models(track: str, fitted: dict, tuned: dict, table: pd.DataFrame,
+                    rank_metric: str, extra_cols: list[str]) -> list[dict]:
+    """Persist every fitted pipeline so the GUI can offer a model picker.
+
+    IMPORTANT: the BASELINE (untuned) pipeline is saved for each model, because
+    the metrics in `table` are the baseline held-out scores. Saving a tuned
+    model under a baseline score would label it with a number it did not earn -
+    the tuned Decision Tree, for example, scores 0.98421 weighted F1, not the
+    0.97136 its baseline row reports.
+
+    Tuned variants are reported separately in `*_tuning.csv`, and the single
+    best model (tuned where tuning helped) is still saved as
+    `<track>_best_pipeline.joblib` for the rest of the project.
+
+    Compression is on: the Random Forest is ~172 MB raw and ~27 MB compressed,
+    which keeps it under GitHub's file-size limits.
+
+    Returns index rows ordered by the SAME metric the comparison table is
+    ranked by, so the GUI dropdown matches the report exactly.
+    """
+    out_dir = config.MODELS_DIR / track
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    ordered = table.sort_values(rank_metric, ascending=False)
+    index = []
+    for rank, (_, row) in enumerate(ordered.iterrows(), start=1):
+        name = row["Model"]
+        model = fitted[name]                      # BASELINE, matching the table
+        fname = f"{slugify(name)}.joblib"
+        joblib.dump(model, out_dir / fname, compress=3)
+        entry = {"rank": rank, "model": name, "file": f"{track}/{fname}",
+                 "also_tuned": name in tuned, "rank_metric": rank_metric,
+                 "rank_value": float(row[rank_metric])}
+        for c in extra_cols:
+            if c in row:
+                entry[c] = float(row[c])
+        index.append(entry)
+        print(f"  [model] {rank:>2}. {name:<36} {rank_metric}={row[rank_metric]:.6f}"
+              f"{'  (a tuned variant also exists)' if name in tuned else ''}")
+
+    (config.MODELS_DIR / f"{track}_index.json").write_text(json.dumps(index, indent=2))
+    print(f"[saved] models/{track}_index.json ({len(index)} baseline models)")
+    return index
+
+
 # ==========================================================================
 # REGRESSION
 # ==========================================================================
@@ -225,6 +279,10 @@ def run_regression(mode: str = "full") -> dict:
     # ---- persist ----------------------------------------------------------
     if mode == "full":
         config.ensure_dirs()
+        print("\n-- saving every model for the GUI picker --")
+        out["model_index"] = save_all_models(
+            "regression", fitted, tuned_models, table,
+            rank_metric="R2", extra_cols=["RMSE", "MAE", "Train_R2"])
         joblib.dump(best_model, config.MODELS_DIR / "regression_best_pipeline.joblib")
         joblib.dump({"model_name": best_name, "features": list(X_train.columns),
                      "target": spec["target"], "random_state": config.RANDOM_STATE,
@@ -391,6 +449,11 @@ def run_classification(mode: str = "full") -> dict:
     best_name = table.sort_values("F1_weighted", ascending=False).iloc[0]["Model"]
     out["best_model_heldout"] = best_name
     if mode == "full":
+        print("\n-- saving every model for the GUI picker --")
+        out["model_index"] = save_all_models(
+            "classification", fitted, tuned_models, table,
+            rank_metric="F1_weighted",
+            extra_cols=["Accuracy", "Precision_failure", "Recall_failure", "ROC_AUC"])
         best_model = tuned_models.get(best_name, fitted[best_name])
         joblib.dump(best_model, config.MODELS_DIR / "classification_best_pipeline.joblib")
         joblib.dump({"model_name": best_name, "features": list(X_train.columns),

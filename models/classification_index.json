@@ -1,0 +1,62 @@
+[
+  {
+    "rank": 1,
+    "model": "A4. Decision Tree Classifier",
+    "file": "classification/A4_decision_tree_classifier.joblib",
+    "also_tuned": true,
+    "rank_metric": "F1_weighted",
+    "rank_value": 0.9713649145884067,
+    "Accuracy": 0.9755,
+    "Precision_failure": 0.7878787878787878,
+    "Recall_failure": 0.38235294117647056,
+    "ROC_AUC": 0.9218540677140421
+  },
+  {
+    "rank": 2,
+    "model": "A2. K-Nearest Neighbors",
+    "file": "classification/A2_k_nearest_neighbors.joblib",
+    "also_tuned": true,
+    "rank_metric": "F1_weighted",
+    "rank_value": 0.9679289751234925,
+    "Accuracy": 0.974,
+    "Precision_failure": 0.8333333333333334,
+    "Recall_failure": 0.29411764705882354,
+    "ROC_AUC": 0.8290859822189744
+  },
+  {
+    "rank": 3,
+    "model": "A5. Support Vector Classifier",
+    "file": "classification/A5_support_vector_classifier.joblib",
+    "also_tuned": false,
+    "rank_metric": "F1_weighted",
+    "rank_value": 0.9635192373169902,
+    "Accuracy": 0.972,
+    "Precision_failure": 0.875,
+    "Recall_failure": 0.20588235294117646,
+    "ROC_AUC": 0.9468167701863354
+  },
+  {
+    "rank": 4,
+    "model": "A1. Logistic Regression",
+    "file": "classification/A1_logistic_regression.joblib",
+    "also_tuned": false,
+    "rank_metric": "F1_weighted",
+    "rank_value": 0.9560115444587566,
+    "Accuracy": 0.9675,
+    "Precision_failure": 0.6363636363636364,
+    "Recall_failure": 0.10294117647058823,
+    "ROC_AUC": 0.8993880160759956
+  },
+  {
+    "rank": 5,
+    "model": "A3. Gaussian Naive Bayes",
+    "file": "classification/A3_gaussian_naive_bayes.joblib",
+    "also_tuned": false,
+    "rank_metric": "F1_weighted",
+    "rank_value": 0.9506338461538462,
+    "Accuracy": 0.958,
+    "Precision_failure": 0.25,
+    "Recall_failure": 0.11764705882352941,
+    "ROC_AUC": 0.8468137254901961
+  }
+]
